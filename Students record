@@ -1,0 +1,60 @@
+#include <stdio.h>
+struct student {
+    char firstName[50];
+    int reg;
+    int pps,eng,maths,coi,phy,total;
+    float cgpa;
+} s[10];
+
+int main() {
+    int i,total;
+    float cgpa;
+    printf("Enter information of students:\n");
+       for (i = 0; i < 10; ++i) { printf("\nFor Reg.n\n", &s[i].reg);
+        scanf("%d", &s[i].reg);
+        printf("Enter first name: ");
+        scanf("%s", &s[i].firstName);
+        printf("Enter marks of PPS: ");
+        scanf("%d", &s[i].pps);
+        printf("Enter marks of ENG: ");
+        scanf("%d", &s[i].eng);
+        printf("Enter marks of Maths: ");
+        scanf("%d", &s[i].maths);
+        printf("Enter marks of COI: ");
+        scanf("%d", &s[i].coi);
+        printf("Enter marks of PHY: ");
+        scanf("%d", &s[i].phy);}
+    printf("Displaying Information:\n\n");
+
+    // displaying information
+    for (i = 0; i < 10; ++i) {
+        printf("\nReg.no: %d\n", s[i].reg);
+        printf("First name: %s\n",s[i].firstName);
+        printf("Marks: %d",s[i].pps);
+        printf("\n");
+        printf("Marks: %d", s[i].eng);
+        printf("\n");
+        printf("Marks: %d", s[i].maths);
+        printf("\n");
+        printf("Marks: %d", s[i].coi);
+        printf("\n");
+        printf("Marks: %d", s[i].phy);
+        printf("\n");
+        total=s[i].phy+s[i].coi+s[i].maths+s[i].eng+s[i].pps;
+        cgpa=total/5;
+        printf("Total%d\nCGPA%.1f\n",total,cgpa);
+        if(cgpa>=9)
+        {
+            printf("Result=Distinction");
+        }
+        else if (cgpa<9&& cgpa>=7.5){
+             printf("Result=First class");
+        }
+        else
+        {
+            printf("Result=Second class");
+        }
+        
+    }
+    return 0;
+}
